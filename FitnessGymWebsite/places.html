@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Exercise Finder</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-6">
+  <h1 class="text-3xl font-bold mb-6 text-center">Random Exercise Finder</h1>
+
+  <!-- Body Part Selection -->
+  <div class="mb-6 text-center">
+    <label for="bodyPart" class="block mb-2 text-lg font-semibold">Choose a Body Part:</label>
+    <select id="bodyPart" class="p-3 rounded bg-gray-800 text-white">
+      <option value="">-- Select --</option>
+      <option value="back">Back</option>
+      <option value="cardio">Cardio</option>
+      <option value="chest">Chest</option>
+      <option value="lower arms">Lower Arms</option>
+      <option value="lower legs">Lower Legs</option>
+      <option value="neck">Neck</option>
+      <option value="shoulders">Shoulders</option>
+      <option value="upper arms">Upper Arms</option>
+      <option value="upper legs">Upper Legs</option>
+      <option value="waist">Waist</option>
+    </select>
+    <button onclick="getRandomExercise()" class="bg-[var(--primary-color)] hover:bg-[var(--deep-blue-grey)] text-whitemt-4 px-6 py-2 rounded text-white font-semibold transition">
+      Get Random Exercise
+    </button>
+  </div>
+
+  <!-- Result -->
+  <div id="result" class="max-w-3xl mx-auto space-y-4"></div>
+
+  <script>
+    const apiKey = '02ea0395b1msh3c2845440f4607ep13f165jsn497bdd87ede9';
+    const apiHost = 'exercisedb.p.rapidapi.com';
+
+    async function getRandomExercise() {
+      const bodyPart = document.getElementById("bodyPart").value;
+      const resultDiv = document.getElementById("result");
+
+      if (!bodyPart) {
+        resultDiv.innerHTML = '<p class="text-red-400 text-center">Please select a body part first!</p>';
+        return;
+      }
+
+      resultDiv.innerHTML = '<p class="text-gray-400 text-center">Fetching exercise...</p>';
+
+      try {
+        const url = `https://${apiHost}/exercises/bodyPart/${encodeURIComponent(bodyPart)}`;
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-key': apiKey,
+            'x-rapidapi-host': apiHost
+          }
+        });
+
+        const exercises = await response.json();
+        let max = bodyPart === 'neck' ? 2 : 10;
+        let randomIndex = Math.floor(Math.random() * Math.min(max, exercises.length));
+
+        const randomExercise = exercises[randomIndex];
+
+        resultDiv.innerHTML = `
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-2">${randomExercise.name}</h2>
+            <p class="mb-4"><strong>Description:</strong> ${randomExercise.description}</p>
+            <div>
+              <strong>Instructions:</strong>
+              <ul class="list-disc ml-6 mt-2 space-y-1">
+                ${randomExercise.instructions.map(step => `<li>${step}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        `;
+      } catch (error) {
+        console.error(error);
+        resultDiv.innerHTML = '<p class="text-red-400 text-center">Failed to fetch exercise data. Try again.</p>';
+      }
+    }
+  </script>
+
+</body>
+</html>

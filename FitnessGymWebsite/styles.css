@@ -1,0 +1,43 @@
+
+.gradient-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+}
+
+.menu-container:hover #menu {
+  display: flex;
+}
+
+/* General Nav Link Style */
+.nav-link {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-link:hover {
+  color: var(--secondary-color);
+}
+
+
+:root {
+  --primary-color: #398dc9;
+  --secondary-color: #8DBBC5;
+  --dark-color: #0A1C35;
+  --soft-color: #C7DCDC;
+  --deep-blue-grey: #303f5e;
+  --contact-bg-color: #193654;
+  --footer-color: #18253c;
+}
+
+h3:hover{
+  color: var(--secondary-color);
+}
+
+.nav-link {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color);
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Your External CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="bg-[var(--dark-color)] text-white">
+
+
+<!-- Navigation Bar -->
+<nav class="fixed w-full z-10 bg-black bg-opacity-90 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+    <span class="font-bold text-xl" style="color: var(--primary-color);">
+      <img src="logo4.png" alt="logo" class="h-4 pb-1 inline-block">
+      FitLife Gym
+    </span>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-8">
+      <a href="index.html" class="nav-link flex items-center space-x-2">
+        <i class="fas fa-house"></i><span>Home</span>
+      </a>
+      <a href="places.html" class="nav-link flex items-center space-x-2">
+        <i class="fas fa-map-marker-alt"></i><span>Places</span>
+      </a>
+      <a href="gallery.html" class="nav-link flex items-center space-x-2">
+        <i class="fas fa-image"></i><span>Gallery</span>
+      </a>
+      <a href="contact.html" class="nav-link flex items-center space-x-2">
+        <i class="fas fa-envelope"></i><span>Contact</span>
+      </a>
+    </div>
+
+    <!-- Hamburger Button (Mobile) -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="focus:outline-none text-white" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu (Hidden Initially) -->
+  <div id="menu" class="hidden px-4 pb-4 flex flex-col space-y-2 md:hidden">
+    <a href="index.html" class="nav-link flex items-center space-x-2 hover:text-[var(--secondary-color)]">
+      <i class="fas fa-house"></i><span>Home</span>
+    </a>
+    <a href="places.html" class="nav-link flex items-center space-x-2 hover:text-[var(--secondary-color)]">
+      <i class="fas fa-map-marker-alt"></i><span>Places</span>
+    </a>
+    <a href="gallery.html" class="nav-link flex items-center space-x-2 hover:text-[var(--secondary-color)]">
+      <i class="fas fa-image"></i><span>Gallery</span>
+    </a>
+    <a href="contact.html" class="nav-link flex items-center space-x-2 hover:text-[var(--secondary-color)]">
+      <i class="fas fa-envelope"></i><span>Contact</span>
+    </a>
+  </div>
+</nav>
+
+<!-- Script to toggle menu -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+
+    <section class="py-16 px-4 max-w-4xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6 text-center pt-16" style="color: var(--primary-color);">
+    Get in Touch with Us
+  </h2>
+  <form action="#" method="POST" class="bg-[var(--deep-blue-grey)] p-8 rounded-lg shadow-lg">
+    <div class="mb-4">
+      <label for="name" class="block text-[var(--soft-color)] font-semibold mb-2">Name</label>
+      <input type="text" id="name" name="name" required
+             class="w-full p-3 rounded bg-[var(--dark-color)] text-white border border-[var(--soft-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">
+    </div>
+    <div class="mb-4">
+      <label for="email" class="block text-[var(--soft-color)] font-semibold mb-2">Email</label>
+      <input type="email" id="email" name="email" required
+             class="w-full p-3 rounded bg-[var(--dark-color)] text-white border border-[var(--soft-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">
+    </div>
+    <div class="mb-4">
+      <label for="message" class="block text-[var(--soft-color)] font-semibold mb-2">Message</label>
+      <textarea id="message" name="message" rows="5" required
+                class="w-full p-3 rounded bg-[var(--dark-color)] text-white border border-[var(--soft-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"></textarea>
+    </div>
+    <button type="submit" class="w-full py-3 rounded bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] text-white font-semibold transition">
+      Send Message
+    </button>
+  </form>
+</section>
+
+    
+</body>
+</html>

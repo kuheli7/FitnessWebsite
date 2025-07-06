@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitLife Gym - Home</title>
+   <!-- Style Sheets-->
+  <link rel="stylesheet" href="styles.css">
+ <!-- Subtitles -->
+  <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English Subtitles" default>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="bg-black text-white">
+
+
+<!-- Navigation Bar -->
+<nav class="fixed w-full z-10 bg-black bg-opacity-90 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+    <span class="font-bold text-xl" style="color: var(--primary-color);">
+      <img src="logo4.png" alt="logo" class="h-4 pb-1 inline-block">
+      FitLife Gym
+    </span>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-8">
+      <a href="index.html" class="nav-link flex items-center space-x-2">
+        <i class="fas fa-house"></i><span>Home</span>
+      </a>
+      <a href="places.html" class="nav-link flex items-center space-x-2">
+        <i class="fas fa-map-marker-alt"></i><span>Places</span>
+      </a>
+      <a href="gallery.html" class="nav-link flex items-center space-x-2">
+        <i class="fas fa-image"></i><span>Gallery</span>
+      </a>
+      <a href="contact.html" class="nav-link flex items-center space-x-2">
+        <i class="fas fa-envelope"></i><span>Contact</span>
+      </a>
+    </div>
+
+    <!-- Hamburger Button (Mobile) -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="focus:outline-none text-white" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu (Hidden Initially) -->
+  <div id="menu" class="hidden px-4 pb-4 flex flex-col space-y-2 md:hidden">
+    <a href="index.html" class="nav-link flex items-center space-x-2 hover:text-[var(--secondary-color)]">
+      <i class="fas fa-house"></i><span>Home</span>
+    </a>
+    <a href="places.html" class="nav-link flex items-center space-x-2 hover:text-[var(--secondary-color)]">
+      <i class="fas fa-map-marker-alt"></i><span>Places</span>
+    </a>
+    <a href="gallery.html" class="nav-link flex items-center space-x-2 hover:text-[var(--secondary-color)]">
+      <i class="fas fa-image"></i><span>Gallery</span>
+    </a>
+    <a href="contact.html" class="nav-link flex items-center space-x-2 hover:text-[var(--secondary-color)]">
+      <i class="fas fa-envelope"></i><span>Contact</span>
+    </a>
+  </div>
+</nav>
+
+<!-- Script to toggle menu -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+
+<!-- Hero Section -->
+<section class="relative h-screen w-full overflow-hidden">
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+    <source src="covervid_1.5mb.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 gradient-overlay"></div>
+  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Stronger. Healthier. You.</h1>
+    <p class="text-lg md:text-2xl mb-8 text-gray-200">Train with FitLife Gym to live a long fit life</p>
+    <a href="#" class="bg-[var(--primary-color)] hover:bg-[var(--deep-blue-grey)] text-white px-8 py-3 rounded-full text-lg font-semibold transition">
+      Explore More
+    </a>
+  </div>
+</section>
+
+<!-- Motivational Section -->
+<section class="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-12">
+  <div class="md:w-1/2 text-center md:text-left md:pl-12">
+    <h2 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">Your Fitness Journey Starts Here</h2>
+    <p class="text-gray-200 leading-relaxed text-lg">
+      At FitLife Gym, every workout is a step closer to your healthiest self. Stay strong, stay dedicated, and discover the power within you.
+    </p>
+  </div>
+  <div class="md:w-1/2 flex justify-center">
+    <img src="transition_image.jpg" alt="Motivational Gym Image" class="w-80 md:w-[30rem] rounded-lg shadow-lg">
+  </div>
+</section>
+
+<!-- Video & Text Section -->
+<section class="max-w-7xl mx-auto px-4 pt-20 pb-12 flex flex-col-reverse md:flex-row gap-8 items-center">
+  <div class="w-full md:w-7/12 p-2 shadow-var(--primary-color)" style="border: 1px solid rgb(35, 34, 34);">
+    <video controls muted class="w-full rounded-lg shadow-lg">
+      <source src="promo_video.mp4" type="video/mp4" >
+      <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English Subtitles" default />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="w-full md:w-5/12">
+    <h2 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">Why Choose FitLife?</h2>
+    <p class="text-gray-200 leading-relaxed">
+      Unlock your full potential with FitLife Gym. From cutting-edge equipment to expert-guided sessions, we offer everything you need for a healthier, stronger you.
+    </p>
+  </div>
+</section>
+
+<!-- Segment 3 -->
+
+<!-- First-Time Visitors Section -->
+<section class="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-12">
+  <!-- Text Content -->
+  <div class="md:w-1/2 text-center md:text-left">
+    <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-color);">
+      Take the First Step with Us!
+    </h2>
+    <p class="text-gray-200 leading-relaxed text-lg">
+      Ready to begin your fitness journey? At FitLife Gym, we welcome first-timers with open arms and personalized support.
+      Whether you're looking to get stronger, healthier, or simply feel better, our team will guide you every step of the way.
+      Join us and discover how rewarding your first workout can be!
+    </p>
+  </div>
+
+  <!-- Image Content -->
+  <div class="md:w-1/2 flex justify-center">
+    <img src="image2.jpg" alt="First Time Visitors" class="w-80 md:w-[30rem] rounded-lg shadow-lg">
+  </div>
+</section>
+
+<!-- Segment 4 -->
+<!-- Our Classes Section -->
+<section class="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row-reverse items-center gap-12">
+  <!-- Text Content -->
+  <div class="md:w-1/2 text-center md:text-left">
+    <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-color);">
+      Classes That Inspire You
+    </h2>
+    <p class="text-gray-200 leading-relaxed text-lg">
+      Explore a variety of classes designed for every fitness level—Yoga for flexibility and calm, Zumba for energetic dance cardio, HIIT for fat-burning intensity, strength training to build muscle, and spin sessions for endurance. There’s something for everyone!
+    </p>
+  </div>
+
+  <!-- Image Content -->
+  <div class="md:w-1/2 flex justify-center">
+    <img src="img12.jpg" alt="Our Fitness Classes" class="w-80 md:w-[30rem] rounded-lg shadow-lg">
+  </div>
+</section>
+
+<!-- Meet Our Trainers Section -->
+<section class="max-w-7xl mx-auto px-4 py-16 text-center">
+  <h2 class="text-3xl font-bold mb-4" style="color: var(--primary-color);">
+    Meet Our Trainers
+  </h2>
+   <p class="text-gray-200 leading-relaxed text-lg mb-10">
+    Our certified trainers bring years of experience and positive energy to every class. Whether it's Yoga, HIIT, or Zumba, they're ready to guide you towards success!
+  </p>
+
+  <!-- Segment 5 -->
+  <!-- Trainer Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <!-- Trainer 1 -->
+    <div class="flex flex-col items-center">
+      <img src="trainer1.jpg" alt="Alex Carter" class="w-40 h-40 object-cover rounded-full shadow-lg mb-4">
+      <h3 class="text-xl font-semibold text-white">Alex Carter</h3>
+      <p class="text-gray-400 text-sm">Yoga & Mindfulness</p>
+    </div>
+
+    <!-- Trainer 2 -->
+    <div class="flex flex-col items-center">
+      <img src="trainer_2.jpg" alt="Maya Thompson" class="w-40 h-40 object-cover rounded-full shadow-lg mb-4">
+      <h3 class="text-xl font-semibold text-white">Maya Thompson</h3>
+      <p class="text-gray-400 text-sm">Zumba Instructor</p>
+    </div>
+
+    <!-- Trainer 3 -->
+    <div class="flex flex-col items-center">
+      <img src="trainer_3.jpg" alt="James Rodriguez" class="w-40 h-40 object-cover rounded-full shadow-lg mb-4">
+      <h3 class="text-xl font-semibold text-white">James Rodriguez</h3>
+      <p class="text-gray-400 text-sm">Strength Coach</p>
+    </div>
+
+    <!-- Trainer 4 -->
+    <div class="flex flex-col items-center">
+      <img src="trainer4.jpg" alt="Priya Sharma" class="w-40 h-40 object-cover rounded-full shadow-lg mb-4">
+      <h3 class="text-xl font-semibold text-white">Priya Sharma</h3>
+      <p class="text-gray-400 text-sm">HIIT Specialist</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Final Segment -->
+<section class="bg-black text-white py-16">
+  <div class="max-w-4xl mx-auto text-center px-4">
+    <h2 class="text-3xl font-bold mb-6" style="color: var(--primary-color);">
+      Ready to Transform Your Life?
+    </h2>
+    <p class="text-gray-300 leading-relaxed mb-8 text-lg">
+      Start today — your strongest, healthiest self is waiting. Whether you're aiming for your first workout or your hundredth, FitLife Gym is here to support you every step of the way.
+    </p>
+    <a href="#" class="bg-[var(--primary-color)]  hover:bg-[var(--deep-blue-grey)] text-white px-8 py-3 rounded-full text-lg font-semibold transition">
+      Join Us Now
+    </a>
+  </div>
+</section>
+
+<!--Audio Segment-->
+<section class="bg-black text-white py-16 flex justify-center items-center">
+  <div class="text-center">
+  <p class="pb-2"> Listen to some motivating music :</p>
+  <audio controls>
+  <source src="background_music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+</div>
+</section>
+
+
+
+<!-- Contact Section -->
+<section class="bg-[var(--contact-bg-color)] text-white py-12 mt-12">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-bold mb-6" style="color: var(--primary-color);">Get in Touch</h2>
+    <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+      <a href="#" class="flex items-center space-x-2 hover:text-[var(--secondary-color)] transition">
+        <i class="fab fa-facebook-f text-xl"></i><span>Facebook</span>
+      </a>
+      <a href="#" class="flex items-center space-x-2 hover:text-[var(--secondary-color)] transition">
+        <i class="fab fa-instagram text-xl"></i><span>Instagram</span>
+      </a>
+      <a href="mailto:info@fitlifegym.com" class="flex items-center space-x-2 hover:text-[var(--secondary-color)] transition">
+        <i class="fas fa-envelope text-xl"></i><span>info@fitlifegym.com</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#0b1c28] text-gray-400 py-8 text-center text-sm">
+  <div class="flex justify-center items-center gap-2 mb-4">
+    <!-- SVG Location Pin Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-[var(--primary-color)]">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 10s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z" />
+    </svg>
+    <span>Find Us at Your Nearest Location</span>
+  </div>
+  &copy; 2025 FitLife Gym. All rights reserved.
+</footer>
+
+<!-- Script -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+</body>
+</html>
